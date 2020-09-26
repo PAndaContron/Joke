@@ -10,6 +10,7 @@ class JokeCog(commands.Cog):
     @commands.command()
     async def joke(self, ctx):
         """Tells you a joke; Respond to setup with ? to hear the punchline"""
+        await ctx.send("The bot updated successfully")
         r = requests.get("https://official-joke-api.appspot.com/random_joke")
         apidata = r.json()
         await ctx.send(apidata["setup"])
